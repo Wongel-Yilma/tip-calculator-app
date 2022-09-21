@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+
+* {   
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+.main-container {
+   font-family: 'Space Mono', monospace;
+   margin: 10rem auto;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   gap:4rem;
+   font-size: 18px;
+   color: hsl(186, 14%, 43%);
+}
+
+.container {
+   width: 80rem;
+   background-color: #fff;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   padding: 3rem;
+   border-radius: 1rem;
+   box-shadow: 0 1rem 1rem rgba(0,0,0,0.05);
+   font-weight: 700;
+   gap: 2rem;
+}
+
+.form {
+   display: flex;
+   flex-direction: column;
+   gap:3rem
+}
+.input__box {
+   display: flex;
+   flex-direction:column;
+   gap: 0.8rem;
+}
+
+input {
+   border: none;
+   background-color: hsl(189, 41%, 97%);
+   border-radius: 0.5rem;
+   height: 4rem;
+   font-size: 24px;
+   font-family: inherit;
+   width: 80%;
+   outline: none;
+   padding: 0 1rem;
+   color: hsl(183, 100%, 15%);
+}
+.tips {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+.tip-buttons{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap: 0.8rem;
+}
+.button {
+   border: none;
+   background-color: hsl(183, 100%, 15%);
+   color: hsl(189, 41%, 97%);
+   padding: 0.8rem 0.4rem;
+   font-family: inherit;
+   font-weight: 700;
+   font-size: 24px;
+   border-radius: 0.5rem;
+   cursor: pointer;
+}
+
+/*######################
+    DISPLAY
+########################*/
+
+.display {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color:  hsl(183, 100%, 15%);
+   padding: 3rem;
+   padding-top: 4rem;
+   border-radius: 1rem;
+   gap: 2rem;
+}
+.button--reset {
+   width: 100%;
+   font-size: 20px;
+   background-color: hsl(172, 67%, 45%);
+   padding: 0.5rem 0.2rem;
+   margin-top: auto;
+}
+
+.displayBox {
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   align-items: center;
+}
+.title  {
+   display: flex;
+   flex-direction: column;
+
+}
+
+.title--name {
+   color: hsl(185, 41%, 84%);
+   font-size: 1.6rem;
+}
+
+.title--description {
+   color: hsl(186, 14%, 43%);
+   font-size: 1.4rem;
+}
+.amount {
+   color:  hsl(172, 67%, 45%);
+   font-size: 3rem;
+}

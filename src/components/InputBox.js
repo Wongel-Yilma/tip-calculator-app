@@ -2,25 +2,30 @@ import React from "react";
 import "../css/style.css";
 
 const InputBox = ({
-  formatOption = null,
   value,
   dispatch,
+  formatter,
   label,
   actionType,
   type = "",
+  Icon,
 }) => {
-  const inputValue =
-    formatOption && value
-      ? new Intl.NumberFormat(formatOption).format(value)
-      : value;
+  console.log(value);
+  const inputValue = value;
+  // value !== 0 && formatter != null ? formatter.format(value) : 0;
+  const handleChange = (e) => {
+    console.log("Handling change");
+    dispatch({ type: actionType, newData: e.target.value });
+  };
   return (
     <div className="input__box">
       <label htmlFor="label">{label}</label>
+      <div className="input__icons">{Icon}</div>
       <input
         type={type}
         name="label"
         value={inputValue}
-        onChange={(e) => dispatch({ actionType, newData: e.target.value })}
+        onChange={handleChange}
       />
     </div>
   );

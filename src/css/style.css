@@ -26,7 +26,7 @@ box-sizing: border-box;
    border-radius: 1rem;
    box-shadow: 0 1rem 1rem rgba(0,0,0,0.05);
    font-weight: 700;
-   gap: 2rem;
+   gap: 5rem;
 }
 
 .form {
@@ -52,7 +52,7 @@ input {
    height: 4rem;
    font-size: 24px;
    font-family: inherit;
-   width: 80%;
+   width: 100%;
    outline: none;
    padding: 0 1rem;
    color: hsl(183, 100%, 15%);
@@ -135,4 +135,9 @@ input {
    color:  hsl(172, 67%, 45%);
    font-size: 3rem;
 }
+
+
+/*#########################
+       Media Queries 
+###########################*/
 

@@ -19,9 +19,14 @@ const Calculator = () => {
   const [state, dispatch] = React.useContext(CalculatorStateContext);
   console.log(state);
   const [selected, setSelected] = React.useState(null);
+  const [customPercentage, setCustomPercentage] = React.useState(0);
   React.useEffect(() => {
-    dispatch({ type: "TIP_PERCENTAGE", newData: selected });
-  }, [selected,dispatch]);
+    if (typeof selected === "number")
+      dispatch({ type: "TIP_PERCENTAGE", newData: selected });
+  }, [selected, dispatch]);
+  React.useEffect(() => {
+    dispatch({ type: "TIP_PERCENTAGE", newData: customPercentage });
+  }, [customPercentage, dispatch]);
   return (
     <div className="calculator">
       <form className="form">
@@ -44,6 +49,8 @@ const Calculator = () => {
                 setSelected={setSelected}
                 selected={selected}
                 value={percentage}
+                customPercentage={customPercentage}
+                setCustomPercentage={setCustomPercentage}
               />
             ))}
           </div>

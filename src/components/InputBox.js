@@ -2,7 +2,7 @@ import React from "react";
 import "../css/style.css";
 
 const InputBox = ({ value, dispatch, label, actionType, type = "", Icon }) => {
-  const inputValue = value;
+  const inputValue = value === undefined ? "" : value;
   const handleChange = (e) => {
     dispatch({ type: actionType, newData: e.target.value });
   };

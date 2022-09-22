@@ -17,7 +17,7 @@ const Trial = () => {
 
 const Calculator = () => {
   const [state, dispatch] = React.useContext(CalculatorStateContext);
-  console.log(state.bill);
+  console.log(state);
   const [selected, setSelected] = React.useState(null);
   React.useEffect(() => {
     dispatch({ type: "TIP_PERCENTAGE", newData: selected });

@@ -1,20 +1,9 @@
 import React from "react";
 import "../css/style.css";
 
-const InputBox = ({
-  value,
-  dispatch,
-  formatter,
-  label,
-  actionType,
-  type = "",
-  Icon,
-}) => {
-  console.log(value);
+const InputBox = ({ value, dispatch, label, actionType, type = "", Icon }) => {
   const inputValue = value;
-  // value !== 0 && formatter != null ? formatter.format(value) : 0;
   const handleChange = (e) => {
-    console.log("Handling change");
     dispatch({ type: actionType, newData: e.target.value });
   };
   return (
@@ -26,6 +15,7 @@ const InputBox = ({
         name="label"
         value={inputValue}
         onChange={handleChange}
+        placeholder={`${actionType === "PEOPLE" ? "0" : "0.00"}`}
       />
     </div>
   );

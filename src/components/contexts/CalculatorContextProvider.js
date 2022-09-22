@@ -4,8 +4,8 @@ import useTipReducer from "../reducers/useTipReducer";
 
 const initialState = {
   tipPercentage: 0,
-  bill: 0,
-  people: 0,
+  bill: undefined,
+  people: undefined,
 };
 
 const CalculatorContextProvider = (props) => {

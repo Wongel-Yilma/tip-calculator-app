@@ -1,9 +1,3 @@
-const initialState = {
-  tipPercentage: 0,
-  bill: 0,
-  people: 0,
-};
-
 const useTipReducer = (state, action) => {
   console.log(action, state);
   switch (action.type) {
@@ -14,7 +8,7 @@ const useTipReducer = (state, action) => {
     case "PEOPLE":
       return { ...state, people: action.newData };
     case "RESET":
-      return { ...state, initialState };
+      return { ...state, tipPercentage: 0, bill: undefined, people: undefined };
     default:
       return state;
   }

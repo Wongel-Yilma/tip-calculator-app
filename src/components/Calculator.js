@@ -13,21 +13,15 @@ const Trial = () => {
   return <div>Hello</div>;
 };
 
-const option = {
-  style: "currency",
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2,
-};
 
-const formatter = new Intl.NumberFormat("en-US", {
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
-});
 
 const Calculator = () => {
   const [state, dispatch] = React.useContext(CalculatorStateContext);
   console.log(state.bill);
   const [selected, setSelected] = React.useState(null);
+  React.useEffect(() => {
+    dispatch({ type: "TIP_PERCENTAGE", newData: selected });
+  }, [selected,dispatch]);
   return (
     <div className="calculator">
       <form className="form">
@@ -37,7 +31,6 @@ const Calculator = () => {
           label="Bill"
           actionType="BILL"
           type="number"
-          formatter={formatter}
           Icon={<PersonIcon />}
         >
           <Trial />
@@ -46,7 +39,12 @@ const Calculator = () => {
           <p>Select Tip %</p>
           <div className="tip-buttons">
             {percentages.map((percentage, i) => (
-              <Button key={i} value={percentage} />
+              <Button
+                key={i}
+                setSelected={setSelected}
+                selected={selected}
+                value={percentage}
+              />
             ))}
           </div>
         </div>
@@ -57,7 +55,6 @@ const Calculator = () => {
             label="Number of People"
             actionType="PEOPLE"
             type="number"
-            formatter={formatter}
             Icon={<DollarIcon />}
           >
             {DollarIcon}

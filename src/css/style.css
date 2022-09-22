@@ -141,3 +141,15 @@ input {
        Media Queries 
 ###########################*/
 
+@media(max-width:37.5em) {
+   .main-container{
+      margin: 6rem auto 0;
+   }
+   .container {
+      grid-template-columns: 1fr;
+      width: 100%;
+   }
+   .tip-buttons{
+      grid-template-columns: repeat(2,1fr);
+   }
+}
